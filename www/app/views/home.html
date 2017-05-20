@@ -1,0 +1,47 @@
+<div ng-app="ImageApp" class="container">
+  <div ng-controller="ImageController">
+  	<div id="mainContainer" style="width: 100%;">
+	   <div id="btnDivv" style="height: 70px; width: 80%;"> <h1> AGENT ABC XYZ</h1></div>
+	    <div id="contDivv" style="height: 70px; width: 20%;"> <img width="100" height="70" src="https://www.googleapis.com/download/storage/v1/b/eyeimage/o/PNR5?generation=1495179809700232&alt=media"/></div>	    
+	</div>
+
+     <div id="mainContainer" style="width: 100%;">
+	   
+	    <div id="btnDivv">
+	    	 <div ng-if="showBeacon">{{beaconMessage}}</div>
+	    	 <div ng-if="showAllPNR" style="margin: 10px;">
+	    	 	<table border="1">
+	    	 	  <td>No:</td>
+	    	 	  <td>PNR</td>
+	    	 	  <td>First Name</td>
+	    	 	  <td>Last Name</td>
+	    	 	  <td>Minor Image</td>
+				  <tr ng-repeat="passenger in passengerData.data">
+				    <td>{{$index +1}}</td>
+				    <td>{{passenger._id}}</td>
+				    <td>{{passenger.fname}}</td>
+				    <td>{{passenger.lname}}</td>
+				    <td>{{passenger.paxurl}}</td>
+				  </tr>
+				</table>
+  	    	 </div>	    	 
+	    </div>
+
+
+	     <div id="contDivv">
+	     	<br/>
+	     	<button id="submitBtn1" class="btn btn-primary bg-darkblue centre fg-white"  style ="width: 20%" ng-click="fetchAllPNRData()"  type="button">            
+    		Show Passengers
+    		</button>
+	     		
+	    	<br/>
+	    	<br/>
+	    	
+	    	<button id="submitBtn" class="btn btn-primary bg-darkblue centre fg-white"  ng-click="tryAgain()"  type="button">            
+    		Give Beacon
+    		</button>
+	    </div>
+	</div>
+
+  </div>
+</div>

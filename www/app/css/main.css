@@ -1,0 +1,15 @@
+#mainContainer {
+    overflow:hidden;
+}
+#btnDivv {
+    float:right;
+    width:80%; 
+    height:500px;
+    border: 1px solid black;
+}
+#contDivv { 
+    
+    width:20%;    
+    height:500px;
+     border: 1px solid black;
+}
